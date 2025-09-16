@@ -32,6 +32,7 @@ echo "(2) Caliginosity / Revert all changes made by sh1mmer or badsh1mmer (reenr
 echo "(3) Icarus / unenrollment up to r129, by writable"
 echo "(4) MrChromebox Firmware Utility"
 echo "(5) Unkeyroll, by Cruzy22k"
+echo "(6) Touch .developer_mode (skip 5 minute delay)"
 echo "(s) Shell"
 echo "(c) Credits"
 echo "(w) whale payload"
@@ -61,7 +62,10 @@ elif [ "$choice" = "5" ]; then
     /bin/sh "$PAYLOAD_DIR/unkeyroll.sh"
         sh /usb/usr/sbin/payloads_menu.sh
         sleep infinity
-
+elif [ "$choice" = "6" ]; then
+    /bin/sh "$PAYLOAD_DIR/touchdev.sh"
+        sh /usb/usr/sbin/payloads_menu.sh
+        sleep infinity
 elif [ "$choice" = "s" ]; then
 	/bin/sh #shut up! its fixed now :whale:
 	sh /usb/usr/sbin/payloads_menu.sh

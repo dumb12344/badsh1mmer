@@ -14,10 +14,14 @@ get_stateful() {
 	if [ -z "$ROOTDEV_LIST" ]; then
 		mexit "could not parse for rootdev devices. this should not have happened."
 	fi
-	local device_type=$(echo "$ROOTDEV_LIST" | grep -oE 'mmc|nvme|sda' | head -n 1)
+	local device_type=$(echo "$ROOTDEV_LIST" | grep -oE 'blk0|blk1|nvme|sda' | head -n 1)
 	case $device_type in
-	"mmc")
+	"blk0")
 		stateful=/dev/mmcblk0p1
+		break
+		;;
+	"blk1")
+		stateful=/dev/mmcblk1p1
 		break
 		;;
 	"nvme")

@@ -4,7 +4,7 @@
 fail(){
 	printf "$1\n"
 	printf "exiting...\n"
-	sleep 3 # so people have time to photograph/record error outputs in reports
+	sleep infinity # so people have time to photograph/record error outputs in reports
 	exit
 }
 main(){

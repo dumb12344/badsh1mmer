@@ -39,8 +39,8 @@ jobs:
       - name: upload disk image
         uses: actions/upload-artifact@v4
         with:
-          name: badsh1mmer_${{ matrix.board }}
-          path: badsh1mmer_*.bin
+          name: badsh1mmer-${{ matrix.board }}
+          path: badsh1mmer-*.bin
           compression-level: 7
 
       - name: create release
